@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://cs4s23qyak7t8"]
+
+[ext_resource type="Script" uid="uid://dwk7rsmg5qx4h" path="res://scripts/exploracao/sr__pu_terrier.gd" id="1_eaeio"]
+[ext_resource type="Texture2D" uid="uid://b0fmdwvf8gagw" path="res://assets/personagens/retratos/SrPuTerrier-retrato.png" id="2_cb4kv"]
+[ext_resource type="Texture2D" uid="uid://bt38dmv3unjrx" path="res://assets/personagens/Sr. Pu Terrier/Sr. Pu Terrier_sprite_estatico.png" id="2_eaeio"]
+[ext_resource type="Texture2D" uid="uid://bho8mm76umy8a" path="res://assets/personagens/retratos/Foracio-retrato.png" id="3_6nuuo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eaeio"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7nqqq"]
+radius = 48.0
+
+[node name="Sr_ Pu_Terrier" type="StaticBody2D"]
+position = Vector2(17, 7)
+script = ExtResource("1_eaeio")
+retrato_pu_terrier = ExtResource("2_cb4kv")
+retrato_foracio = ExtResource("3_6nuuo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_eaeio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eaeio")
+
+[node name="AreaInteracao" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInteracao"]
+shape = SubResource("CircleShape2D_7nqqq")
+
+[node name="TextoInteracao" type="Label" parent="."]
+offset_left = -55.0
+offset_top = -55.0
+offset_right = 47.0
+offset_bottom = -32.0
+text = "E - Conversar"
+metadata/_edit_use_anchors_ = true

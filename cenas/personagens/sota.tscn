@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxovskyg85bhv"]
+
+[ext_resource type="PackedScene" uid="uid://cqwqgolt8hwd8" path="res://cenas/personagens/npc_base.tscn" id="1_lktkr"]
+[ext_resource type="Texture2D" uid="uid://cw8uxjudx70ja" path="res://assets/personagens/Sr. Pu Terrier/Sota-sprite-estatico.png" id="2_ensdc"]
+
+[node name="NPCBase" instance=ExtResource("1_lktkr")]
+nome_npc = "Sota"
+falas = "Então você é o famoso Forácio?
+Esperava alguém um pouco mais impressionante.
+Vamos ver do que você é capaz."
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_ensdc")

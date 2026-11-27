@@ -1,0 +1,67 @@
+
+extends StaticBody2D
+
+# ==========================================
+# TALES OF AURORA
+# Sistema básico de interação com NPCs
+# ==========================================
+
+
+# Referência à área que detecta o jogador.
+@onready var area_interacao: Area2D = $AreaInteracao
+
+# Referência ao texto exibido sobre o NPC.
+@onready var texto_interacao: Label = $TextoInteracao
+
+
+# Indica se o jogador está próximo do NPC.
+# bool aceita apenas true (verdadeiro) ou false (falso).
+var jogador_perto: bool = false
+
+
+# Executada quando o NPC entra na cena.
+func _ready() -> void:
+
+	# Esconde o texto inicialmente.
+	texto_interacao.hide()
+
+	# Conecta os sinais da área às funções abaixo.
+	# Assim sabemos quando alguém entra ou sai.
+	area_interacao.body_entered.connect(_ao_entrar_area)
+	area_interacao.body_exited.connect(_ao_sair_area)
+
+
+# Executada a cada quadro do jogo.
+func _process(_delta: float) -> void:
+
+	# Verifica duas condições:
+	# 1. O jogador precisa estar próximo.
+	# 2. A tecla de interação precisa ser pressionada.
+	if jogador_perto and Input.is_action_just_pressed("interagir"):
+
+		# Mostra uma mensagem provisória.
+		texto_interacao.text = "Olá, Forácio!"
+
+
+# Executada quando um corpo entra na área.
+func _ao_entrar_area(corpo: Node2D) -> void:
+
+	# Confirma que o corpo detectado é o Jogador.
+	if corpo.name == "Jogador":
+
+		jogador_perto = true
+
+		# Mostra a indicação da tecla.
+		texto_interacao.text = "E - Conversar"
+		texto_interacao.show()
+
+
+# Executada quando um corpo sai da área.
+func _ao_sair_area(corpo: Node2D) -> void:
+
+	if corpo.name == "Jogador":
+
+		jogador_perto = false
+
+		# Esconde o texto ao se afastar.
+		texto_interacao.hide()
