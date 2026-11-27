@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://rmbu0qm67bjo"]
+[gd_scene load_steps=4 format=3 uid="uid://rmbu0qm67bjo"]
+
+[ext_resource type="Script" uid="uid://b8un4mdo5itc" path="res://scripts/exploracao/jogador.gd" id="1_vfmek"]
+[ext_resource type="SpriteFrames" uid="uid://da4td1vumynwy" path="res://assets/personagens/foracio/foracio_animacoes.tres" id="2_o80dk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4eq3u"]
+size = Vector2(14, 14)
 
 [node name="Jogador" type="CharacterBody2D" groups=["jogador"]]
+script = ExtResource("1_vfmek")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("2_o80dk")
+animation = &"andar_baixo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4eq3u")
+
+[node name="Camera2D" type="Camera2D" parent="."]

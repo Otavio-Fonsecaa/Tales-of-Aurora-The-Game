@@ -1,123 +1,11 @@
-[gd_scene load_steps=24 format=4 uid="uid://brndbu2l6wqvu"]
+[gd_scene load_steps=8 format=4 uid="uid://brndbu2l6wqvu"]
 
 [ext_resource type="TileSet" uid="uid://e4u7xluht34f" path="res://assets/cenarios/tileset_principal.tres" id="1_b2swa"]
 [ext_resource type="PackedScene" uid="uid://rmbu0qm67bjo" path="res://cenas/personagens/jogador.tscn" id="2_b2swa"]
-[ext_resource type="Script" uid="uid://b8un4mdo5itc" path="res://scripts/exploracao/jogador.gd" id="3_f13wu"]
 [ext_resource type="Texture2D" uid="uid://bnrtckkkrjqpy" path="res://icon.svg" id="4_y7hp6"]
-[ext_resource type="Texture2D" uid="uid://cdof16rpo7mqy" path="res://assets/personagens/foracio/foracio_mapa_3x4_96px.png" id="5_f13wu"]
 [ext_resource type="PackedScene" uid="uid://cs4s23qyak7t8" path="res://cenas/personagens/sr__pu_terrier.tscn" id="6_y7hp6"]
 [ext_resource type="PackedScene" uid="uid://cxovskyg85bhv" path="res://cenas/personagens/sota.tscn" id="7_8ups2"]
 [ext_resource type="PackedScene" uid="uid://qvucf1ewgy8w" path="res://cenas/personagens/hayate.tscn" id="8_7csla"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(14, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y7hp6"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(96, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5fhr6"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(0, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ups2"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(192, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7csla"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(96, 288, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a0ex6"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(0, 288, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cggvr"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(192, 288, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dgwkd"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(96, 192, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ujnbu"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(0, 192, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yvhu0"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(192, 192, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j2cnx"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(96, 96, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5mqu"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(192, 96, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8m0la"]
-atlas = ExtResource("5_f13wu")
-region = Rect2(0, 96, 96, 96)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f1psg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y7hp6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5fhr6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8ups2")
-}],
-"loop": true,
-"name": &"andar_baixo",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7csla")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a0ex6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cggvr")
-}],
-"loop": true,
-"name": &"andar_cima",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dgwkd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ujnbu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yvhu0")
-}],
-"loop": true,
-"name": &"andar_direita",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j2cnx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l5mqu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8m0la")
-}],
-"loop": true,
-"name": &"andar_esquerda",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(32, 32)
@@ -133,26 +21,7 @@ tile_set = ExtResource("1_b2swa")
 
 [node name="Jogador" parent="." instance=ExtResource("2_b2swa")]
 position = Vector2(766, 339)
-script = ExtResource("3_f13wu")
 metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Jogador"]
-visible = false
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("4_y7hp6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jogador"]
-visible = false
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="Camera2D" type="Camera2D" parent="Jogador"]
-visible = false
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Jogador"]
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_f1psg")
-animation = &"andar_esquerda"
-frame_progress = 0.957846
 
 [node name="Pedra" type="StaticBody2D" parent="."]
 position = Vector2(600, 320)
