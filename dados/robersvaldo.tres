@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DadosPersonagem" load_steps=2 format=3 uid="uid://b3gnmoe1rwvm"]
+
+[ext_resource type="Script" uid="uid://cgqtdjxvpribo" path="res://scripts/sistemas/dados_personagem.gd" id="1_boxht"]
+
+[resource]
+script = ExtResource("1_boxht")
+nome = "Robesrvaldo"
+vida_maxima = 15
+ataque = 9
+defesa = 4
+movimento_tatico = 9
+alcance_ataque = 7
+metadata/_custom_type_script = "uid://cgqtdjxvpribo"

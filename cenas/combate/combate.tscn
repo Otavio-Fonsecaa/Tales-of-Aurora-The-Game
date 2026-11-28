@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://bye45i75bt4r3"]
+
+[ext_resource type="Texture2D" uid="uid://cwcxtwburnn7m" path="res://assets/cenarios/cidade-combate.png" id="1_a6fs2"]
+[ext_resource type="Script" uid="uid://cala0trikgbud" path="res://scripts/combate/grade.gd" id="2_wk26c"]
+[ext_resource type="Script" uid="uid://dd7ah18435tq1" path="res://scripts/combate/aliados.gd" id="3_qrimk"]
+[ext_resource type="Texture2D" uid="uid://dwk6e6eogay15" path="res://assets/personagens/foracio/foracio_combate.png" id="4_3m1ha"]
+[ext_resource type="Texture2D" uid="uid://dg5ghybms5t85" path="res://assets/personagens/lin-vin/linv_vin_combate.png" id="5_qn4py"]
+[ext_resource type="Texture2D" uid="uid://bf8id5cp35d22" path="res://assets/personagens/robervaldo/robersvaldo_combate.png" id="6_ox1sg"]
+[ext_resource type="Texture2D" uid="uid://dm5nhp06qu42d" path="res://assets/personagens/ursula/ursula_combate.png" id="7_uldqd"]
+
+[node name="Combate" type="Node2D"]
+
+[node name="Fundo" type="TextureRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("1_a6fs2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Campo" type="Node2D" parent="."]
+
+[node name="Grade" type="Node2D" parent="Campo"]
+script = ExtResource("2_wk26c")
+colunas = 10
+linhas = 8
+largura_casa = 38.0
+altura_casa = 18.0
+inclinacao = 8.0
+origem = Vector2(140, 160)
+
+[node name="Aliados" type="Node2D" parent="Campo"]
+script = ExtResource("3_qrimk")
+
+[node name="Foracio" type="Sprite2D" parent="Campo/Aliados"]
+texture = ExtResource("4_3m1ha")
+hframes = 4
+vframes = 4
+
+[node name="LinVin" type="Sprite2D" parent="Campo/Aliados"]
+texture = ExtResource("5_qn4py")
+
+[node name="Robersvaldo" type="Sprite2D" parent="Campo/Aliados"]
+texture = ExtResource("6_ox1sg")
+
+[node name="Ursula" type="Sprite2D" parent="Campo/Aliados"]
+texture = ExtResource("7_uldqd")
+
+[node name="Inimigos" type="Node2D" parent="Campo"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+
+[node name="InterfaceCombate" type="CanvasLayer" parent="."]
+
+[node name="PainelSuperior" type="Panel" parent="InterfaceCombate"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PainelInferior" type="Panel" parent="InterfaceCombate"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NomeTurno" type="Label" parent="InterfaceCombate"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="InfoUnidade" type="Label" parent="InterfaceCombate"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BotaoFimTurno" type="Button" parent="InterfaceCombate"]
+offset_right = 8.0
+offset_bottom = 8.0

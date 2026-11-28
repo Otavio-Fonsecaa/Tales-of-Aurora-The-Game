@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://d20y4dt6e46jl"]
+
+[ext_resource type="Script" uid="uid://bwha1cgyrn6bq" path="res://scripts/sistemas/gerenciador_party.gd" id="1_pokih"]
+[ext_resource type="Script" uid="uid://38wc0a0baid1" path="res://scripts/sistemas/atributos_combate.gd" id="2_0o3wp"]
+[ext_resource type="Resource" uid="uid://c6m3ilnqf4dd" path="res://dados/foracio.tres" id="3_28oio"]
+[ext_resource type="Resource" uid="uid://btnbmrxvugakf" path="res://dados/linvin.tres" id="4_sxgcm"]
+[ext_resource type="Resource" uid="uid://b3gnmoe1rwvm" path="res://dados/robersvaldo.tres" id="5_34uk7"]
+[ext_resource type="Resource" uid="uid://vb1sp6bx0fbl" path="res://dados/ursula.tres" id="6_ds2pn"]
+
+[node name="GerenciadorParty" type="Node"]
+script = ExtResource("1_pokih")
+
+[node name="Foracio" type="Node" parent="."]
+script = ExtResource("2_0o3wp")
+dados = ExtResource("3_28oio")
+
+[node name="LinVin" type="Node" parent="."]
+script = ExtResource("2_0o3wp")
+dados = ExtResource("4_sxgcm")
+
+[node name="Robersvaldo" type="Node" parent="."]
+script = ExtResource("2_0o3wp")
+dados = ExtResource("5_34uk7")
+
+[node name="Ursula" type="Node" parent="."]
+script = ExtResource("2_0o3wp")
+dados = ExtResource("6_ds2pn")

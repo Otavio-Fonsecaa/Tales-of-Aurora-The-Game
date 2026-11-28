@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://5ctp2rqmnvd8"]
+
+[ext_resource type="Script" uid="uid://dqk5tkpldxfw8" path="res://scripts/sistemas/interface_party.gd" id="1_otflm"]
+
+[node name="InterfaceParty" type="CanvasLayer"]
+script = ExtResource("1_otflm")
+
+[node name="Raiz" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="ColorRect" parent="Raiz"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Centralizador" type="CenterContainer" parent="Raiz"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Janela" type="PanelContainer" parent="Raiz/Centralizador"]
+layout_mode = 2
+
+[node name="Conteudo" type="VBoxContainer" parent="Raiz/Centralizador/Janela"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="Raiz/Centralizador/Janela/Conteudo"]
+layout_mode = 2
+
+[node name="Grade" type="GridContainer" parent="Raiz/Centralizador/Janela/Conteudo"]
+layout_mode = 2
+columns = 2
+
+[node name="BotaoFechar" type="Button" parent="Raiz/Centralizador/Janela/Conteudo"]
+layout_mode = 2
+text = "Fechar — Tab / Esc"

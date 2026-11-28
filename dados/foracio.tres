@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DadosPersonagem" load_steps=2 format=3 uid="uid://c6m3ilnqf4dd"]
+
+[ext_resource type="Script" uid="uid://cgqtdjxvpribo" path="res://scripts/sistemas/dados_personagem.gd" id="1_wkluy"]
+
+[resource]
+script = ExtResource("1_wkluy")
+nome = "Forácio"
+ataque = 5
+defesa = 9
+metadata/_custom_type_script = "uid://cgqtdjxvpribo"
